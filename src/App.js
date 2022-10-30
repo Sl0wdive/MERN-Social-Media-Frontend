@@ -16,7 +16,7 @@ function App() {
         <h2>Стрічка новин</h2>
         <div className="Post">
           <img src=""/>
-          <p> Текст поста</p>
+          <h5> Текст поста</h5>
           <div className="BottomPost">
             <div className="BPLeft">
               <button className="ButtonLike">
