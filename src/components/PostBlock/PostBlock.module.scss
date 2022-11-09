@@ -1,0 +1,64 @@
+.Post{
+    border-radius: 20px;
+    border: 1px solid rgb(211, 211, 211);
+    margin: 70px;
+
+    h5{
+      margin: 10px;
+    }
+
+    .BottomPost{
+      margin-top: -12px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+    .BPLeft{
+      display: flex;
+      align-items: center;
+      p{
+        margin-left: -5px;
+        margin-top: 12px;
+      }
+    }
+
+    .BPRight{
+      display: flex;
+      align-items: center;
+      p{
+        margin-top: 12px;
+        margin-left: 2px;
+        margin-right: 8px;
+      }
+    }
+
+    .ButtonLike
+    {
+      margin: 5px;
+      border-color: white;
+      border: none;
+      background: none;
+      cursor: pointer;
+
+      opacity: 0.8;
+      &:hover{
+        opacity: 1;
+      }
+    }
+
+    .ButtonComment
+    {
+      margin-top: 2px;
+      background: white;
+      border-color: white;
+      border: none;
+      background: none;
+      cursor: pointer;
+
+      opacity: 0.8;
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }

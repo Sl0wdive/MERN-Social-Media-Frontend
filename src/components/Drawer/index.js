@@ -1,32 +1,34 @@
+import styles from './Drawer.module.scss'
+
 function Drawer(){
     return(
-        <div style={{display: 'none'}} className="DrawerShadow">
-            <div className="Drawer">
+        <div /*style={{display: 'none'}}*/ className={styles.DrawerShadow}>
+            <div className={styles.Drawer}>
                 <h2>Username</h2>
-                <div className="UserInfo">
+                <div className={styles.Info}>
                     <img width = {300} height = {300} src = "/img/user.svg"/>
-                    <div className="UserMenu">
-                        <button className="ButtonHome">
+                    <div className={styles.UserMenu}>
+                        <button className={styles.button}>
                             <h3>Стрічка новин</h3>
                         </button>
                         <br/>
-                        <button className="ButtonMyPost">
+                        <button className={styles.button}>
                             <h3>Моя сторінка</h3>
                         </button>
                         <br/>
-                        <button className="ButtonCreatePost">
+                        <button className={styles.button}>
                             <h3>Створити новий допис</h3>
                         </button>
                         <br/>
-                        <button className="ButtonMyFollowings">
+                        <button className={styles.button}>
                             <h3>Підписки</h3>
                         </button>
                         <br/>
-                        <button className="ButtonChats">
+                        <button className={styles.button}>
                             <h3>Діалоги</h3>
                         </button>
                         <br/>
-                        <button className="ButtonLogout">
+                        <button className={styles.ButtonLogout}>
                             <h3>Вийти з акаунту</h3>
                         </button>
                         <br/>

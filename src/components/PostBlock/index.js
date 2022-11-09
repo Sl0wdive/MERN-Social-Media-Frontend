@@ -1,18 +1,20 @@
+import styles from './PostBlock.module.scss'
+
 function PostBlock(props){
     return(
-    <div className="Post">
+    <div className={styles.Post}>
         <img src={props.imgURL}/>
         <h5>{props.title}</h5>
         <h5>{props.author}</h5>
-        <div className="BottomPost">
-            <div className="BPLeft">
-                <button className="ButtonLike">
+        <div className={styles.BottomPost}>
+            <div className={styles.BPLeft}>
+                <button className={styles.ButtonLike}>
                     <img width={20} height ={20} src = "/img/like.png" alt="like"/>
                 </button>
                 <p>{props.likes}</p>
             </div>
-            <div className="BPRight">
-                <button className="ButtonComment">
+            <div className={styles.BPRight}>
+                <button className={styles.ButtonComment}>
                     <img width={20} height ={20} src = "/img/comment.png" />
                 </button>
                 <p>{props.comments}</p>
