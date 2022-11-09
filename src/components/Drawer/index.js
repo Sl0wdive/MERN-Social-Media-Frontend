@@ -2,9 +2,9 @@ import styles from './Drawer.module.scss'
 
 function Drawer(props){
     return(
-        <div onClick={props.onClose} className={styles.DrawerShadow}>
+        <div className={styles.DrawerShadow}>
             <div className={styles.Drawer}>
-                <h2>Username</h2>
+                <h2><span onClick={props.onClose}>X </span>Username</h2>
                 <div className={styles.Info}>
                     <img width = {300} height = {300} src = "/img/user.svg"/>
                     <div className={styles.UserMenu}>
