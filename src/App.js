@@ -11,12 +11,11 @@ const arr = [
 ];
 
 function App() {
+  const [drawerOpened, setDrawerOpened] = React.useState(false);
   return (
-    
     <div className="Wrapper">
-      <Drawer/>
-      <Header/>
-      
+      {drawerOpened ? <Drawer onClose={()=>setDrawerOpened(false)}/> : null}
+      <Header onClickDrawer={()=>setDrawerOpened(true)}/>
       <div className="Content">
         <h2>Стрічка новин</h2>
         {arr.map((obj)=>(

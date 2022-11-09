@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 
 import styles from './Header.module.scss'
 
-function Header(){
+function Header(props){
     const isAuth = false;
 
     const onClickLogout = () => {};
@@ -17,7 +17,7 @@ function Header(){
                 <p>
                     Username
                 </p>
-                <img width={30} height ={30} src = "/img/user.svg" /> 
+                <img onClick={props.onClickDrawer} width={30} height ={30} src = "/img/user.svg" /> 
             </div>
         </header>
     );

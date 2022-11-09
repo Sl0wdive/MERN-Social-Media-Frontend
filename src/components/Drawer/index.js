@@ -1,8 +1,8 @@
 import styles from './Drawer.module.scss'
 
-function Drawer(){
+function Drawer(props){
     return(
-        <div /*style={{display: 'none'}}*/ className={styles.DrawerShadow}>
+        <div onClick={props.onClose} className={styles.DrawerShadow}>
             <div className={styles.Drawer}>
                 <h2>Username</h2>
                 <div className={styles.Info}>
