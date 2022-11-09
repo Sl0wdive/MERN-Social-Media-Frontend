@@ -3,6 +3,7 @@ function PostBlock(props){
     <div className="Post">
         <img src={props.imgURL}/>
         <h5>{props.title}</h5>
+        <h5>{props.author}</h5>
         <div className="BottomPost">
             <div className="BPLeft">
                 <button className="ButtonLike">
