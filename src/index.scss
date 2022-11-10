@@ -4,7 +4,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(234, 253, 238);
-  height: 100%; 
+  
+  overflow: hidden;
 }
 
 .Wrapper{
@@ -15,7 +16,7 @@ body {
   margin-right: 50px;
   margin-top: 30px;
   margin-bottom: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
 }
 
 
@@ -25,5 +26,8 @@ body {
     margin-top: 15px;
     margin-bottom: 15px;
     margin-left: 15px;
+    size: 160px;
   }
+  height: 82vh; 
+  overflow: auto;
 }
