@@ -8,7 +8,7 @@ function Home() {
   const dispatch = useDispatch();
   const { posts } = useSelector(state => state.posts);
 
-  const isPostLoading = posts.status == 'loading';
+  const isPostLoading = posts.status === 'loading';
 
   React.useEffect(()=>{
     dispatch(fetchPosts());
@@ -27,7 +27,7 @@ function Home() {
           <PostBlock
           id = {obj._id}
           title={obj.title}
-          author={obj.fullName}
+          author={obj.user.fullName}
           createdAt={(obj.createdAt)}
           likes={obj.likeCount}
           comments={obj.commentCount}
