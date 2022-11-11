@@ -7,7 +7,7 @@ function PostBlock(props){
             <img src={props.imgURL} className={styles.PostImage} alt ="Image"/>
         </div>
         <h5>{props.title}</h5>
-        <h5>{props.author}</h5>
+        <h5>Автор: {props.author}</h5>
         <h6>{props.createdAt}</h6>
         <div className={styles.BottomPost}>
             <div className={styles.BPLeft}>

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: 'http://localhost:4444'
+    baseURL: 'https://mern-social-media-2022.herokuapp.com/'
 });
 
 export default instance;

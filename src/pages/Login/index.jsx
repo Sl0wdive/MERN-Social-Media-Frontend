@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 
 import styles from './Login.module.scss'
 
-function Register() {
+function Login() {
     return (
         <div className={styles.forma}>
           <Typography className={styles.zag} variant="h5">
@@ -20,4 +20,4 @@ function Register() {
       );
 }
 
-export default Register;
+export default Login;
