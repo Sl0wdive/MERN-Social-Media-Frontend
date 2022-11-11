@@ -18,24 +18,26 @@ function Home() {
   console.log(isPostLoading);
     
     return(
-        <div className="Content">
+      <div className="Content">
         <h2>Стрічка новин</h2>
-        {(isPostLoading ? [...Array(5)] : posts.items).map((obj, index) =>
-        isPostLoading ? (
-          <PostBlock key={index}/>
-        ) : (
-          <PostBlock
-          id = {obj._id}
-          title={obj.title}
-          author={obj.user.fullName}
-          createdAt={(obj.createdAt)}
-          likes={obj.likeCount}
-          comments={obj.commentCount}
-          imgURL={(obj.imgURL || '/img/DefaultPost.png')}
-          />
-        )
-      )}
+        <div className="PostsGrid">
+          {(isPostLoading ? [...Array(5)] : posts.items).map((obj, index) =>
+          isPostLoading ? (
+            <PostBlock key={index}/>
+          ) : (
+            <PostBlock
+            id = {obj._id}
+            title={obj.title}
+            author={obj.user.fullName}
+            createdAt={(obj.createdAt)}
+            likes={obj.likeCount}
+            comments={obj.commentCount}
+            imgURL={(obj.imgURL || '/img/DefaultPost.png')}
+            />
+          )
+        )}
       </div>
+    </div>
     )
 }
 
