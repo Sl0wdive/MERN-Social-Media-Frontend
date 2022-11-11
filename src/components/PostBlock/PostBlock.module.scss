@@ -5,14 +5,26 @@
     width: 600px;
     height: auto;
 
+    .imgCenter
+    {
+      text-align: center;
+    }
+
     .PostImage{
-      height: auto;
-      width: auto;
+      height: 90%;
+      width: 90%;
+      margin-top: 18px;
     }
 
     h5{
       font-size: 20px;
       margin: 10px;
+    }
+
+    h6{
+      font-size: 15px;
+      margin: 10px;
+      color: gray;
     }
 
     .BottomPost{

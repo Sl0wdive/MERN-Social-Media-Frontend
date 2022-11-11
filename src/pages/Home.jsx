@@ -13,23 +13,28 @@ function Home() {
   React.useEffect(()=>{
     dispatch(fetchPosts());
   }, []);
-
-    const arr = [
-        {title: 'Текст поста арр', author:"Автор", likes: 30, comments: 23, imgURL: '/img/user.svg'},
-        {title: 'Текст поста арр2', author:"Автор", likes: 130, comments: 223, imgURL: '/img/user.svg'}
-      ];
+  
+          
+  console.log(isPostLoading);
+    
     return(
         <div className="Content">
         <h2>Стрічка новин</h2>
-        {arr.map((obj)=>(
+        {(isPostLoading ? [...Array(5)] : posts.items).map((obj, index) =>
+        isPostLoading ? (
+          <PostBlock key={index}/>
+        ) : (
           <PostBlock
+          id = {obj._id}
           title={obj.title}
-          author={obj.author}
-          likes={obj.likes}
-          comments={obj.comments}
-          imgURL={obj.imgURL}
+          author={obj.fullName}
+          createdAt={(obj.createdAt)}
+          likes={obj.likeCount}
+          comments={obj.commentCount}
+          imgURL={(obj.imgURL || '/img/DefaultPost.png')}
           />
-        ))};
+        )
+      )}
       </div>
     )
 }

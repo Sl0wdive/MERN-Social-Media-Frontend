@@ -3,9 +3,12 @@ import styles from './PostBlock.module.scss'
 function PostBlock(props){
     return(
     <div className={styles.Post}>
-        <img src={props.imgURL} className={styles.PostImage}/>
+        <div className={styles.imgCenter}>
+            <img src={props.imgURL} className={styles.PostImage} alt ="Image"/>
+        </div>
         <h5>{props.title}</h5>
         <h5>{props.author}</h5>
+        <h6>{props.createdAt}</h6>
         <div className={styles.BottomPost}>
             <div className={styles.BPLeft}>
                 <button className={styles.ButtonLike}>
