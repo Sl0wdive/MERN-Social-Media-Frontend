@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Drawer from './components/Drawer';
 import Register from './pages/Register';
 import Login  from './pages/Login';
+import AddPost from './pages/AddPost';
 
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element= {<Home/>}/>
         <Route path="/register" element= {<Register/>}/>
         <Route path="/login" element= {<Login/>}/>
+        <Route path="/addpost" element= {<AddPost/>}/>
       </Routes>
     </div>
   );
