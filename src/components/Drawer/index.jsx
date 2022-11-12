@@ -18,7 +18,7 @@ function Drawer(props){
                         </Link>
                         <br/>
                         <button className={styles.button}>
-                            <h3>Моя сторінка</h3>
+                            <h3>Моя сторінка(NW)</h3>
                         </button>
                         <br/>
                         <Link to='/addpost'>
@@ -28,11 +28,11 @@ function Drawer(props){
                         </Link>
                         <br/>
                         <button className={styles.button}>
-                            <h3>Підписки</h3>
+                            <h3>Підписки(NW)</h3>
                         </button>
                         <br/>
                         <button className={styles.button}>
-                            <h3>Діалоги</h3>
+                            <h3>Діалоги(NW)</h3>
                         </button>
                         <br/>
                         <button className={styles.ButtonLogout}>

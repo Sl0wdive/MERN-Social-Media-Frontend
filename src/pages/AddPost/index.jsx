@@ -1,8 +1,8 @@
 import React from 'react';
 import TextField from '@mui/material/TextField';
-import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import SimpleMDE from 'react-simplemde-editor';
+import { Link } from 'react-router-dom'
 
 import 'easymde/dist/easymde.min.css';
 import styles from './AddPost.module.scss';
@@ -37,7 +37,7 @@ const AddPost = () => {
   return (
     <div className={styles.content} style={{ padding: 30 }}>
       <Button variant="outlined" size="large">
-        Загрузити прев'ю
+        Загрузити картинку
       </Button>
       <input type="file" onChange={handleChangeFile} hidden />
       {imageUrl && (
@@ -58,12 +58,12 @@ const AddPost = () => {
       />
       <SimpleMDE className={styles.editor} value={value} onChange={onChange} options={options} />
       <div className={styles.buttons}>
-        <Button size="large" variant="contained">
+        <Button className={styles.buttonUp} size="large" variant="contained">
           Опублікувати
         </Button>
-        <a href="/">
+        <Link to="/">
           <Button size="large">Відміна</Button>
-        </a>
+        </Link>
       </div>
     </div>
   );

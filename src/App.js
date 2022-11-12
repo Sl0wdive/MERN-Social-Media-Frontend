@@ -11,13 +11,12 @@ import AddPost from './pages/AddPost';
 
 
 
-
 function App() {
   
   const [drawerOpened, setDrawerOpened] = React.useState(false);
   return (
     <div className="Wrapper">
-      {drawerOpened ? <Drawer onClose={()=>setDrawerOpened(false)}/> : null}
+      {drawerOpened && <Drawer onClose={()=>setDrawerOpened(false)}/>}
       <Header onClickDrawer={()=>setDrawerOpened(true)}/>
       <Routes>
         <Route path="/" element= {<Home/>}/>

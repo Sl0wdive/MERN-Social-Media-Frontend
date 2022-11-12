@@ -1,50 +1,57 @@
 .title {
-    input {
-      font-size: 42px;
-      font-weight: 900;
-    }
+  input {
+    font-size: 42px;
+    font-weight: 900;
+  }
   
-    div {
-      &:before,
-      &:after {
-        display: none;
+  div {
+    &:before,
+    &:after {
+      display: none;
       }
     }
-  }
+}
   
-  .image {
-    width: 100%;
-  }
+.image {
+  width: 100%;
+}
   
-  .tags {
-    margin: 15px 0;
-  }
+.tags {
+  margin: 15px 0;
+}
   
-  .editor {
-    margin: 30px -30px;
+.editor {
+  margin: 30px -30px;
   
-    :global {
-      .cm-s-easymde {
-        border: 0;
-        font-size: 22px;
-      }
-      .editor-toolbar {
-        border: 0;
-        background-color: white;
-      }
+  :global {
+    .cm-s-easymde {
+      border: 0;
+      font-size: 22px;
+    }
+    .editor-toolbar {
+      border: 0;
+      background-color: white;
     }
   }
+}
   
-  .buttons {
-    display: flex;
+.buttons {
+  display: flex;
   
-    button {
-      margin-right: 15px;
-    }
+  button {
+    margin-right: 15px;
   }
 
-  .content{
+  .buttonUp {
+    margin-right: 15px;
+    
+    background-color: black !important;
+  }
+}
+
+.content{
     
   height: 72vh; 
   overflow: auto;
-  }
+}
+
