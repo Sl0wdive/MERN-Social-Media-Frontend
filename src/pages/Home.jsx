@@ -2,9 +2,10 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import PostBlock from '../components/PostBlock';
-import { fetchPosts } from '../redux/slices/posts'
+import { fetchPosts } from '../redux/slices/posts';
+import { logoutw } from '../redux/slices/auth';
 
-function Home() {
+function Home(props) {
   const dispatch = useDispatch();
   const { posts } = useSelector(state => state.posts);
 
@@ -13,13 +14,19 @@ function Home() {
   React.useEffect(()=>{
     dispatch(fetchPosts());
   }, []);
+
+  const OnClickLogout = () => {
+      if (window.confirm("Вийти з акаунту?")){
+      dispatch(logoutw());
+      }
+  };
   
           
   console.log(isPostLoading);
     
     return(
       <div className="Content">
-        <h2>Стрічка новин</h2>
+        <h2  onClick={OnClickLogout}>Стрічка новин</h2>
         <div className="PostsGrid">
           {(isPostLoading ? [...Array(5)] : posts.items).map((obj, index) =>
           isPostLoading ? (

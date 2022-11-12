@@ -1,8 +1,19 @@
 import { Link } from 'react-router-dom';
+import React from 'react';
+import { useDispatch} from 'react-redux';
+import { logoutw } from '../../redux/slices/auth';
 
 import styles from './Drawer.module.scss'
 
-function Drawer(props){
+function Drawer(props) {
+    const dispatch = useDispatch;
+
+    const OnClickLogout = () => {
+        if (window.confirm("Вийти з акаунту?")){
+        dispatch(logoutw());
+        }
+    };
+  
     return(
         <div className={styles.DrawerShadow}>
             <div className={styles.Drawer}>
@@ -35,7 +46,7 @@ function Drawer(props){
                             <h3>Діалоги(NW)</h3>
                         </button>
                         <br/>
-                        <button className={styles.ButtonLogout}>
+                        <button onClick={OnClickLogout} className={styles.ButtonLogout}>
                             <h3>Вийти з акаунту</h3>
                         </button>
                         <br/>
