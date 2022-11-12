@@ -1,5 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 import Home from './pages/Home';
 import Header from './components/Header';
@@ -8,8 +10,15 @@ import Register from './pages/Register';
 import Login  from './pages/Login';
 import AddPost from './pages/AddPost';
 import FullPost from './pages/FullPost';
+import { fetchMe, SelectisAuth } from './redux/slices/auth';
 
 function App() {
+  const dispatch = useDispatch();
+  const isAuth = useSelector(SelectisAuth);
+
+  React.useEffect(() =>{
+    dispatch(fetchMe())
+  }, []);
   
   const [drawerOpened, setDrawerOpened] = React.useState(false);
   return (

@@ -18,6 +18,7 @@ function Home(props) {
   const OnClickLogout = () => {
       if (window.confirm("Вийти з акаунту?")){
       dispatch(logoutw());
+      window.localStorage.removeItem('token');
       }
   };
   
