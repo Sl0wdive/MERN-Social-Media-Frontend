@@ -21,7 +21,7 @@ function App() {
         <Route path="/register" element= {<Register/>}/>
         <Route path="/login" element= {<Login/>}/>
         <Route path="/addpost" element= {<AddPost/>}/>
-        <Route path="/post" element= {<FullPost/>}/>
+        <Route path="/post/:id" element= {<FullPost/>}/>
       </Routes>
     </div>
   );

@@ -1,4 +1,5 @@
-import styles from './PostBlock.module.scss'
+import styles from './PostBlock.module.scss';
+import { Link } from 'react-router-dom';
 
 function PostBlock(props){
     return(
@@ -17,9 +18,11 @@ function PostBlock(props){
                 <p>{props.likes}</p>
             </div>
             <div className={styles.BPRight}>
+                <Link to={`/post/${props.id}`}>
                 <button className={styles.ButtonComment}>
                     <img width={20} height ={20} src = "/img/comment.png" />
                 </button>
+                </Link>
                 <p>{props.comments}</p>
             </div>
         </div>

@@ -6,8 +6,8 @@ function Drawer(props){
     return(
         <div className={styles.DrawerShadow}>
             <div className={styles.Drawer}>
-                <button onClick={props.onClose}>X </button>
-                <h2>Username</h2>
+                <button className={styles.xb} onClick={props.onClose}>X </button>
+                <h2 className={styles.uname}>Username</h2>
                 <div className={styles.Info}>
                     <img width = {300} height = {300} src = "/img/user.svg"/>
                     <div className={styles.UserMenu}>

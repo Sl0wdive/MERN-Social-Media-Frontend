@@ -35,9 +35,9 @@ function Home() {
             imgURL={(obj.imgURL || '/img/DefaultPost.png')}
             />
           )
-        )}
+          )}
+        </div>
       </div>
-    </div>
     )
 }
 
