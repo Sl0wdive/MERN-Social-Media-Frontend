@@ -22,8 +22,13 @@ function Login() {
     mode: 'onChange'
   });
 
-  const onSubmit = (values) => {
-    dispatch(fetchUserData(values));
+  const onSubmit = async (values) => {
+    const data = await dispatch(fetchUserData(values));
+    if('token' in data.payload){
+      window.localStorage.setItem('token', data.payload.token);
+    } else{
+      alert('Помилка авторизації');
+    }
   };
   
   if (isAuth){
