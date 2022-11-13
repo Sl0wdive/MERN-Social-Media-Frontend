@@ -47,7 +47,7 @@ function Drawer(props) {
                     </button>
                     <br/>
                     <button onClick={OnClickLogout} className={styles.ButtonLogout}>
-                        <h3>Вийти з акаунту</h3>
+                        <h3>Вийти з акаунту(NW?)</h3>
                     </button>
                     <br/>
                 </div>

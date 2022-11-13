@@ -19,7 +19,7 @@ function PostBlock(props){
   <div className={styles.Post}>
       {props.isEditable && (
       <div className={styles.editButtons}>
-        <a href={`/posts/id/edit`}>
+        <a href={`/post/${props.id}/edit`}>
           <IconButton color="primary">
             <EditIcon />
           </IconButton>
