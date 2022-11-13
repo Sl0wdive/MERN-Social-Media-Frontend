@@ -5,7 +5,7 @@ import PostBlock from '../components/PostBlock';
 import { fetchPosts } from '../redux/slices/posts';
 import { logoutw } from '../redux/slices/auth';
 
-function Home(props) {
+function Home() {
   const dispatch = useDispatch();
   const { posts } = useSelector(state => state.posts);
 

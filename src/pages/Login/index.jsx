@@ -6,7 +6,6 @@ import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 
-
 import styles from './Login.module.scss'
 import { fetchUserData, SelectisAuth } from '../../redux/slices/auth';
 
@@ -24,11 +23,13 @@ function Login() {
 
   const onSubmit = async (values) => {
     const data = await dispatch(fetchUserData(values));
-    if('token' in data.payload){
-      window.localStorage.setItem('token', data.payload.token);
-    } else{
+    if(!data.payload){
       alert('Помилка авторизації');
     }
+    
+    if('token' in data.payload){
+      window.localStorage.setItem('token', data.payload.token);
+    } 
   };
   
   if (isAuth){
