@@ -7,6 +7,7 @@ import { fetchComments } from '../../redux/slices/comments';
 import styles from './FullPost.module.scss'
 import axios from '../../axios';
 import PostBlock from '../../components/PostBlock';
+import AddComment  from '../../components/AddComment';
 
 function FullPost() {
     
@@ -64,7 +65,7 @@ function FullPost() {
             <div>
                 {(commentLoading ? [...Array(3)] : comments).map((obj, index) =>
                 commentLoading ? (
-                <CommentBlock key={index}/>
+                <></>
                 ) : (
                 <CommentBlock
                 text={obj.content}
@@ -72,6 +73,7 @@ function FullPost() {
                 at={obj.createdAt}
                 />
                 ))}
+                <AddComment></AddComment>
             </div>
         </div>
       </div>
