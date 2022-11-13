@@ -51,7 +51,7 @@ function FullPost() {
             
             <div className={styles.media}>
                 
-                <img className={styles.imgP} src={data.imageUrl ? `https://mern-social-media-2022.herokuapp.com${data.imageUrl}` : '/img/DefaultPost.png'}/>
+                <img className={styles.imgP} src={data.imageUrl ? `${process.env.REACT_APP_API_URL}${data.imageUrl}` : '/img/DefaultPost.png'}/>
             </div>
             <div className={styles.PostText}>
                 <h1>{data.title}</h1>
