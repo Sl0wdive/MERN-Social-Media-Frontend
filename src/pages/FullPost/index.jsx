@@ -2,15 +2,18 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import CommentBlock from '../../components/CommentBlock';
 import { useParams } from 'react-router-dom';
+import { fetchComments } from '../../redux/slices/comments'; 
 
 import styles from './FullPost.module.scss'
 import axios from '../../axios';
 import PostBlock from '../../components/PostBlock';
 
 function FullPost() {
+    
     const [data, setData] = React.useState();
     const [comments, setComment] = React.useState();
     const [isLoading, setLoading] = React.useState(true);
+    const [commentLoading, setCommentLoading] = React.useState(true);
     const {id} = useParams();
 
     React.useEffect(() =>{
@@ -27,8 +30,8 @@ function FullPost() {
     React.useEffect(() =>{
         axios.get(`/comment/${id}`)
         .then(res =>{
-            setComment(res.comments);
-            setLoading(false);
+            setComment(res.data);
+            setCommentLoading(false);
         }).catch((err) =>{
             console.warn(err);
             alert('Error');
@@ -36,15 +39,10 @@ function FullPost() {
     }, []);
     
 
-
-    const arr = [
-        {author:"Автор", text: "Текст", at: "12 липстопада"},
-        {author:"Автор", text: "Текст22", at: "11 липстопада"}
-      ];
-
     if(isLoading){
         return <PostBlock/>
     }
+
 
     return(
         <div className={styles.PostInfo}>
@@ -64,13 +62,16 @@ function FullPost() {
                 <h1 className={styles.cohead}>Коментарі</h1>
             </div>
             <div>
-                {arr.map((obj)=>(
+                {(commentLoading ? [...Array(3)] : comments).map((obj, index) =>
+                commentLoading ? (
+                <CommentBlock key={index}/>
+                ) : (
                 <CommentBlock
-                text={obj.text}
-                author={obj.author}
-                at={obj.at}
+                text={obj.content}
+                author={obj.commenter.fullName}
+                at={obj.createdAt}
                 />
-                ))};
+                ))}
             </div>
         </div>
       </div>
