@@ -28,7 +28,7 @@ function Header(props){
             ) : (
             <>
               <Link to="/login">
-                <Button className={styles.button} variant="contained">Війти</Button>
+                <Button className={styles.button} variant="contained">Увійти</Button>
               </Link>
               <Link to="/register">
                 <Button className={styles.button} variant="contained">Створити акаунт</Button>

@@ -53,7 +53,7 @@ function Login() {
           type='password'
           {...register('password', {required: 'Заповніть поле'})}/><br/>
           <Button type="submit" className={styles.button} size="large" variant="contained">
-          Війти
+          Увійти
           </Button>
         </form>
       </div>
