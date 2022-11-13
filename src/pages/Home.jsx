@@ -8,6 +8,7 @@ import { logoutw } from '../redux/slices/auth';
 function Home() {
   const dispatch = useDispatch();
   const { posts } = useSelector(state => state.posts);
+  const userData = useSelector(state => state.auth.data);
 
   const isPostLoading = posts.status === 'loading';
 
@@ -22,31 +23,30 @@ function Home() {
       }
   };
   
-          
-  console.log(isPostLoading);
     
-    return(
-      <div className="Content">
-        <h2  onClick={OnClickLogout}>Стрічка новин</h2>
-        <div className="PostsGrid">
-          {(isPostLoading ? [...Array(5)] : posts.items).map((obj, index) =>
-          isPostLoading ? (
-            <PostBlock key={index}/>
-          ) : (
-            <PostBlock
-            id = {obj._id}
-            title={obj.title}
-            author={obj.user.fullName}
-            createdAt={(obj.createdAt)}
-            likes={obj.likeCount}
-            comments={obj.commentCount}
-            imgURL={(obj.imgURL || '/img/DefaultPost.png')}
-            />
-          )
-          )}
-        </div>
+  return(
+    <div className="Content">
+      <h2  onClick={OnClickLogout}>Стрічка новин</h2>
+      <div className="PostsGrid">
+        {(isPostLoading ? [...Array(5)] : posts.items).map((obj, index) =>
+        isPostLoading ? (
+          <PostBlock key={index}/>
+        ) : (
+          <PostBlock
+          id = {obj._id}
+          title={obj.title}
+          author={obj.user.fullName}
+          createdAt={(obj.createdAt)}
+          likes={obj.likeCount}
+          comments={obj.commentCount}
+          imgURL={(obj.imgURL || '/img/DefaultPost.png')}
+          isEditable={userData?._id===obj.user._id}
+          />
+        )
+        )}
       </div>
-    )
+    </div>
+  )
 }
 
 export default Home;

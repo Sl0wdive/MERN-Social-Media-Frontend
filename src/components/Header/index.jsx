@@ -8,6 +8,7 @@ import { logout, SelectisAuth } from '../../redux/slices/auth';
 
 function Header(props){
   const isAuth = useSelector(SelectisAuth);
+  const userData = useSelector(state => state.auth.data);
   
   return(
     <header className={styles.header}>
@@ -20,7 +21,7 @@ function Header(props){
           {isAuth ? (
             <>
               <p>
-                Username
+                {userData.fullName}
               </p>
               <img onClick={props.onClickDrawer} width={30} height ={30} src = "/img/user.svg" /> 
             </>

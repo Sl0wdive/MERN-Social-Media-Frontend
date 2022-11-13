@@ -4,10 +4,15 @@ import Button from '@mui/material/Button';
 import SimpleMDE from 'react-simplemde-editor';
 import { Link } from 'react-router-dom'
 
+import { useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 import 'easymde/dist/easymde.min.css';
-import styles from './AddPost.module.scss';
+import styles from './AddPost.module.scss'
+import { SelectisAuth } from '../../redux/slices/auth';
+
 
 const AddPost = () => {
+  const isAuth = useSelector(SelectisAuth)
   const imageUrl = '';
   const [value, setValue] = React.useState('');
 
@@ -33,6 +38,10 @@ const AddPost = () => {
     }),
     [],
   );
+
+  if (!isAuth){
+    return <Navigate to="/"/>
+  }
 
   return (
     <div className={styles.content} style={{ padding: 30 }}>

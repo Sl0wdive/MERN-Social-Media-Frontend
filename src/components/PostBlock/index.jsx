@@ -6,12 +6,11 @@ import DeleteIcon from '@mui/icons-material/Clear';
 import EditIcon from '@mui/icons-material/Edit';
 
 function PostBlock(props){
-    const isEditable = true;
     const onClickRemove = () => {};
 
     return(
     <div className={styles.Post}>
-        {isEditable && (
+        {props.isEditable && (
         <div className={styles.editButtons}>
           <a href={`/posts/id/edit`}>
             <IconButton color="primary">

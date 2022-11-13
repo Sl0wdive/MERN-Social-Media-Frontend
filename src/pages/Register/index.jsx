@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import styles from './Register.module.scss'
 import { fetchRegister, SelectisAuth } from '../../redux/slices/auth';
@@ -60,7 +61,6 @@ function Register() {
           helperText={errors.password?.message}
           type='password'
           {...register('password', {required: 'Заповніть поле'})}/><br/>
-          
           <Button type="submit" className={styles.button} size="large" variant="contained">
           Створити
           </Button>
