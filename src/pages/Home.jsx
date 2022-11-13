@@ -39,7 +39,7 @@ function Home() {
           createdAt={(obj.createdAt)}
           likes={obj.likeCount}
           comments={obj.commentCount}
-          imgURL={(obj.imgURL || '/img/DefaultPost.png')}
+          imgURL={obj.imageUrl ? `https://mern-social-media-2022.herokuapp.com${obj.imageUrl}` : '/img/DefaultPost.png'}
           isEditable={userData?._id===obj.user._id}
           />
         )
