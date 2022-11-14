@@ -34,10 +34,6 @@ function Register() {
       window.localStorage.setItem('token', data.payload.token);
     } 
   };
-
-  if (window.localStorage.getItem('token')){
-    window.location.reload(false);
-  }
   
   if (isAuth){
     return <Navigate to="/"/>
