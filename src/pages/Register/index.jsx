@@ -35,7 +35,7 @@ function Register() {
     } 
   };
 
-  if ('token' in data.payload){
+  if (window.localStorage.getItem('token')){
     window.location.reload(false);
   }
   
