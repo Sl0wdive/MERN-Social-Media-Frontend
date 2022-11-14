@@ -76,10 +76,10 @@ function FullPost() {
                 />
                 ))}
                 {isAuth ? (
-                <>
-                </>
-                ) : (
                     <AddComment></AddComment>
+                ) : (
+                    <>
+                    </>
                 )}
             </div>
         </div>
