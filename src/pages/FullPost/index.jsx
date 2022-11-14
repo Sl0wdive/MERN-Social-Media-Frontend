@@ -8,6 +8,7 @@ import styles from './FullPost.module.scss'
 import axios from '../../axios';
 import PostBlock from '../../components/PostBlock';
 import AddComment  from '../../components/AddComment';
+import { SelectisAuth } from '../../redux/slices/auth';
 
 function FullPost() {
     
