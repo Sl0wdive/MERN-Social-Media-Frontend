@@ -11,6 +11,7 @@ import AddComment  from '../../components/AddComment';
 
 function FullPost() {
     
+    const isAuth = useSelector(SelectisAuth);
     const [data, setData] = React.useState();
     const [comments, setComment] = React.useState();
     const [isLoading, setLoading] = React.useState(true);
