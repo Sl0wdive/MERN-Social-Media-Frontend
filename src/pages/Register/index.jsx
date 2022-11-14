@@ -32,9 +32,12 @@ function Register() {
     
     if('token' in data.payload){
       window.localStorage.setItem('token', data.payload.token);
-      window.location.reload(false);
     } 
   };
+
+  if ('token' in data.payload){
+    window.location.reload(false);
+  }
   
   if (isAuth){
     return <Navigate to="/"/>
