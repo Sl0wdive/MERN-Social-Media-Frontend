@@ -73,7 +73,12 @@ function FullPost() {
                 at={obj.createdAt}
                 />
                 ))}
-                <AddComment></AddComment>
+                {isAuth ? (
+                <>
+                </>
+                ) : (
+                    <AddComment></AddComment>
+                )}
             </div>
         </div>
       </div>
